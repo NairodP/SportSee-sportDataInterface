@@ -1,5 +1,5 @@
-import "/src/css/pages/Community.css";
+import "/src/css/pages/OtherPages.css";
 
 export default function Community() {
-  return <div>Page de communauté</div>;
+  return <div className="otherPages">Page de communauté</div>;
 }

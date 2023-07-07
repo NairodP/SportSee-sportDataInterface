@@ -1,5 +1,5 @@
-import "/src/css/pages/Setting.css";
+import "/src/css/pages/OtherPages.css";
 
 export default function Setting() {
-  return <div>Page de réglage</div>;
+  return <div className="otherPages">Page de réglage</div>;
 }

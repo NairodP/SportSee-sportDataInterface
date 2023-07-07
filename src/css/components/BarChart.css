@@ -1,0 +1,72 @@
+.barre-graph {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.recharts-responsive-container {
+  position: absolute;
+  bottom: 0;
+}
+
+.barre-graph-title {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #20253a;
+}
+.barre-graph-legend {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  display: flex;
+  gap: 52px;
+  border: none;
+}
+.barre-graph-legend li {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--grey-text);
+}
+
+.custom-tooltip {
+  border: none;
+}
+
+.custom-tooltip.custom-bar {
+  margin-left: 30px;
+  color: #fff;
+  background: #e60000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 63px;
+  width: 39px;
+  border: none;
+  border-radius: 3px;
+}
+.custom-tooltip .data-kg,
+.custom-tooltip .data-cal {
+  font-size: 7px;
+}
+
+.barre-graph-legend li::before {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 25px;
+}
+
+.barre-graph-legend li:first-child::before {
+  background-color: #282d30;
+}
+
+.barre-graph-legend li:last-child::before {
+  background-color: #e60000;
+}

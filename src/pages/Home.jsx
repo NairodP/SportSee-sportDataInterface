@@ -1,5 +1,5 @@
-import "/src/css/pages/Home.css";
+import "/src/css/pages/OtherPages.css";
 
 export default function Home() {
-  return <div>Hello World !!</div>;
+  return <div className="otherPages">Hello World !!</div>;
 }

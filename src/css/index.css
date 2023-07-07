@@ -8,15 +8,16 @@
 
 :root {
   --red-color: #f70000;
-  --black-color: #050509;
+  --black-color: #020203;
   --darkgrey-color: #262b2e;
-  --bg-box-color: #fafafa;
+  --grey-text: #bbbbbb;
+  --bg-box-color: #ececec;
   --font: 'Roboto', sans-serif;
 }
 
 #root {
   font-family: var(--font);
-  max-width: 1680px;
+  max-width: 1950px;
 }
 
 ul {

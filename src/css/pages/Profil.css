@@ -1,0 +1,115 @@
+.profil-container {
+  margin: 40px 0 0 14vw;
+}
+
+.profil-container-header {
+  font-size: 48px;
+  margin-bottom: 50px;
+}
+
+.profil-container-header h1 {
+  font-weight: 500;
+  font-size: inherit;
+}
+
+.profil-container-header p {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.redFirstname {
+  color: var(--red-color);
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
+  padding-left: 117px;
+}
+
+.loader-container img {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  display: inline-block;
+}
+
+.align-container {
+  display: flex;
+}
+
+.graphs-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  width: 835px;
+  height: calc(320px + 263px + 20px);
+}
+.barre-graph-container {
+  grid-area: 1 / 1 / 2 / 4;
+  height: 320px;
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  background-color: var(--bg-box-color);
+  border-radius: 4px;
+}
+
+.line-graph-container {
+  grid-area: 2 / 1 / 3 / 2;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background-color: var(--red-color);
+  border-radius: 4px;
+}
+
+.radar-graph-container {
+  grid-area: 2 / 2 / 3 / 3;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background-color: var(--darkgrey-color);
+  border-radius: 4px;
+}
+
+.pie-graph-container {
+  grid-area: 2 / 3 / 3 / 4;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background-color: var(--bg-box-color);
+  border-radius: 4px;
+}
+
+/* Styles spécifiques aux écrans d'une largeur maximale de 1400 pixels */
+@media (max-width: 1400px) {
+  .align-container {
+    flex-direction: column-reverse;
+  }
+  .graphs-container {
+    width: 100%;
+    padding-right: calc(14vw - 117px);
+  }
+  .profil-container-header {
+    margin-bottom: 0px;
+  }
+}
+
+/* Styles spécifiques aux écrans d'une largeur maximale de 1023 pixels */
+@media (max-width: 1023px) {
+  .line-graph-container,
+  .radar-graph-container,
+  .pie-graph-container {
+    height: 90%;
+  }
+  .profil-container {
+    margin-left: 20px;
+  }
+  .align-container {
+    margin-right: 20px;
+  }
+}

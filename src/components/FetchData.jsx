@@ -4,7 +4,6 @@ import Fetch from "./Fetch";
 import { useEffect, useState } from "react";
 
 const FetchData = (url, userId) => {
-
   const [user, setUser] = useState();
   const [activity, setActivity] = useState([]);
   const [averageSessions, setAverageSessions] = useState([]);
@@ -14,7 +13,7 @@ const FetchData = (url, userId) => {
   const { isLoading: loadingUser, axiosRequest: fetchUser } = Fetch(
     `${url}/user/${userId}/`
   );
-  
+
   const { isLoading: loadingActivity, axiosRequest: fetchActivity } = Fetch(
     `${url}/user/${userId}/activity`
   );

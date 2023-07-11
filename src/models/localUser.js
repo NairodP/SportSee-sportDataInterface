@@ -1,9 +1,9 @@
-export default class UserDataModel {
+export default class LocalUserDataModel {
   constructor(data) {
-    this._userMainData = this.processUserMainData(data.user);
-    this._userActivity = data.activity;
-    this._userAverageSessions = data.averageSessions;
-    this._userPerformance = data.performance;
+    this._userMainData = this.processUserMainData(data.userMainData);
+    this._userActivity = data.userActivity.sessions;
+    this._userAverageSessions = data.userAverageSessions.sessions;
+    this._userPerformance = data.userPerformance;
   }
 
   processUserMainData(userMainData) {
@@ -31,3 +31,5 @@ export default class UserDataModel {
     return this._userPerformance;
   }
 }
+
+

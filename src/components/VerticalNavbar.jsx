@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
 export default function VerticalNavbar({ isDataLoaded }) {
+
   const [showNav, setShowNav] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 

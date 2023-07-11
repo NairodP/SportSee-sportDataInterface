@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import "/src/css/components/verticalNavbar.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
-export default function VerticalNavbar() {
+export default function VerticalNavbar({ isDataLoaded }) {
   const [showNav, setShowNav] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -29,7 +30,7 @@ export default function VerticalNavbar() {
 
   return (
     <>
-      {windowWidth < 1024 && (
+      {isDataLoaded && windowWidth < 1024 && (
         <button className="displayNav" onClick={toggleNav}>
           <img src="/src/assets/img/hamburger.svg" alt="Menu" />
         </button>

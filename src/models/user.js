@@ -16,7 +16,6 @@ export default class UserDataModel {
   }
 
   getUserMainData() {
-    // Ajouter une condition pour regrouper 'todayScore' et 'score' dans userMainData pour le dernier graph
     return this.userMainData;
   }
 

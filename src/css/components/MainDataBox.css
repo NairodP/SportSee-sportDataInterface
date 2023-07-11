@@ -80,4 +80,7 @@
   .data-box {
     width: 22vw;
   }
+  .data-box-content {
+    gap: 15px;
+  }
 }

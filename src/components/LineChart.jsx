@@ -98,6 +98,8 @@ export default function ComponentLineChart({ data }) {
     data: propTypes.array.isRequired,
   };
 
+  // console.log(data);
+
   const dayNames = ["L", "M", "M", "J", "V", "S", "D"];
 
   let before = 0;

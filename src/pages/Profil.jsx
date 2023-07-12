@@ -12,6 +12,10 @@ import FakeCallAPI from "../components/FakeCallAPI.jsx";
 import FetchData from "../components/FetchData";
 
 export default function Profil() {
+
+  // Pour utiliser les datas de l'API, initier la variable "dataAPI" à "true" sinon "false".
+  const dataAPI = true;
+
   const [keyData, setKeyData] = useState(null);
   const [dataActivity, setDataActivity] = useState(null);
   const [dataSessions, setDataSessions] = useState(null);
@@ -22,7 +26,7 @@ export default function Profil() {
   const userId = 12; // L'ID que l'on souhaite utiliser, ici Karl Dovineau
   // const userId = 18; // L'ID que l'on souhaite utiliser, ici Cecilia Ratorez
 
-  // Pour utiliser l'API
+  // API
   const url = `http://localhost:3000`;
   const apiData = FetchData(url, userId);
 
@@ -33,7 +37,7 @@ export default function Profil() {
     }
   }, [apiData]);
 
-  // Pour utiliser les datas locales
+  // datas locales
   const localData = FakeCallAPI(userId);
 
   useEffect(() => {

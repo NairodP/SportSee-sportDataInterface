@@ -17,6 +17,7 @@
   font-weight: 500;
   color: #20253a;
 }
+
 .barre-graph-legend {
   position: absolute;
   top: 24px;
@@ -25,6 +26,7 @@
   gap: 52px;
   border: none;
 }
+
 .barre-graph-legend li {
   font-size: 14px;
   display: flex;
@@ -33,14 +35,10 @@
   color: var(--grey-text);
 }
 
-.custom-tooltip {
-  border: none;
-}
-
 .custom-tooltip.custom-bar {
   margin-left: 30px;
   color: #fff;
-  background: #e60000;
+  background-color: #e60000;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -50,6 +48,7 @@
   border: none;
   border-radius: 3px;
 }
+
 .custom-tooltip .data-kg,
 .custom-tooltip .data-cal {
   font-size: 7px;

@@ -5,10 +5,6 @@
   overflow: hidden;
 }
 
-/* .line-graph:not(.custom-tooltip) {
-  overflow: unset;
-} */
-
 .recharts-responsive-container {
   position: absolute;
   left: 50%;
@@ -26,14 +22,6 @@
   height: 48px;
 }
 
-.custom-tooltip {
-  border: none;
-}
-
-.custom-tooltip {
-  transform: translate(-150%, 0%);
-}
-
 .custom-tooltip-box {
   background-color: #fff;
   padding: 7px;
@@ -41,3 +29,6 @@
   font-size: 8px;
 }
 
+.custom-tooltip.custom-tooltip-left {
+  transform: translate(-150%, 0%);
+}

@@ -38,20 +38,16 @@ export default function ComponentLineChart({ data }) {
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
+      const isSunday = payload[0].payload.day === 7;
+      const tooltipClassName = isSunday ? "custom-tooltip-left" : "";
       return (
-        <div className="custom-tooltip">
+        <div className={`custom-tooltip line-chart ${tooltipClassName}`}>
           <div className="custom-tooltip-box">{`${payload[0].value} min`}</div>
         </div>
       );
     }
     return null;
   };
-
-  const test = ({ active, payload }) => {
-    console.log(payload);
-    console.log(active);
-  };
-  test;
 
   CustomTooltip.propTypes = {
     active: propTypes.bool,
@@ -83,8 +79,8 @@ export default function ComponentLineChart({ data }) {
           <Tooltip
             content={CustomTooltip}
             contentStyle={{ background: "#fff", color: "#000" }}
-            itemStyle={{ color: "#000" }}
             cursor={false}
+            position="left"
           />
           <Line
             type="natural"

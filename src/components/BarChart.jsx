@@ -9,7 +9,6 @@ import {
   Tooltip,
 } from "recharts";
 import propTypes from "prop-types";
-import "../css/pages/Profil.css";
 import "../css/components/BarChart.css";
 
 export default function ComponentBarChart({ data }) {

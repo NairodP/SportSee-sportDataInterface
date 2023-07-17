@@ -2,9 +2,9 @@
 
 ## Description
 
-SportSee est une application de suivi sportif qui permet aux utilisateurs de visualiser et d'analyser leurs données sportives. Ce projet consiste en la refonte de la page de profil de l'application, qui gère l'affichage des données sportives de l'utilisateur.
+SportSee est un site web de coaching / suivi sportif qui permet aux utilisateurs de visualiser et d'analyser leurs données sportives. Ce projet consiste en la refonte de la page de Profil, qui gère l'affichage des données sportives de l'utilisateur.
 
-Le code de l'application est entièrement nouveau et utilise la bibliothèque React pour le développement de l'interface utilisateur. Les principales bibliothèques utilisées dans le projet sont Axios et Recharts.
+Le code du site est entièrement nouveau et utilise la bibliothèque React pour le développement de l'interface utilisateur. Les principales dépendances utilisées dans le projet sont Axios et Recharts.
 
 ## Prérequis
 
@@ -23,31 +23,36 @@ Pour lancer le projet en local, suivez les étapes ci-dessous :
 
 ## Utilisation
 
-L'application web peut être utilisée avec deux sources de données différentes :
+Le site peut être utilisée avec deux sources de données différentes :
 
 1. **Données enregistrées en local** : Par défaut, l'application est configurée pour utiliser des données pré-enregistrées en local. Pour utiliser cette option, suivez les étapes suivantes :
-   - Ouvrez le fichier `/src/pages/Profil.jsx`.
-   - Commentez les lignes suivantes :
+   - Ouvrez le fichier `/src/services/FetchData.jsx`.
+   - Commentez le code de
      ```javascript
-     // const data = FetchData(url, userId); // API
-     // const userDataModel = new UserDataModel(data); // API
+     /* Début sans APPEL à l'API */
      ```
-   - Cela permettra à l'application d'utiliser les données locales simulées pour l'affichage.
+     à
+     ```javascript
+     /* Fin sans APPEL à l'API */
+     ```
+   - Cela permettra d'utiliser les données locales pour l'affichage.
 
 2. **Appel à l'API** : Si vous souhaitez utiliser l'appel à l'API pour récupérer les données en temps réel, suivez les étapes suivantes :
    - Ouvrez le fichier `/src/pages/Profil.jsx`.
-   - Commentez les lignes suivantes :
+   - Commentez les lignes de
      ```javascript
-     // const data = FakeCallAPI(userId); // Data Locale
-     // const userDataModel = new LocalUserDataModel(data); // Data Locale
+     /* Début avec APPEL à l'API */
+     ```
+     à
+     ```javascript
+     /* Fin avec APPEL à l'API */
      ```
    - Cela permettra à l'application d'utiliser l'appel à l'API pour récupérer les données sportives de l'utilisateur.
 
-Que ce soit pour les données enregistrées en local ou pour l'appel à l'API, vous pouvez choisir entre 2 utilisateurs pour effectuer une simulation. Pour cela vous devrez commenter / décommenter une des lignes suivantes depuis `/src/pages/Profil.jsx` : 
+Que ce soit pour les données enregistrées en local ou pour l'appel à l'API, vous pouvez choisir entre 2 utilisateurs pour effectuer une simulation. Pour cela vous devrez commenter / décommenter une des lignes suivantes depuis le fichier `/.env` : 
   ```javascript
-  // const userId = 12; // L'ID que l'on souhaite utiliser, ici Karl Dovineau
-  // const userId = 18; // L'ID que l'on souhaite utiliser, ici Cecilia Ratorez
+  VITE_USER_ID=12  // L'ID que l'on souhaite utiliser, ici Karl Dovineau
+  VITE_USER_ID=18  // L'ID que l'on souhaite utiliser, ici Cecilia Ratorez
   ```
 
-Des modèles (models) ont également été créés pour normaliser les données et rendre le code plus flexible, facilitant ainsi les modifications en cas de changement de format des données.
-
+Un model (fichier `/src/models`) a également été créé pour normaliser les données et rendre le code plus flexible, facilitant ainsi les modifications en cas de changement de format des données.

@@ -6,13 +6,13 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import Root from "./pages/Root.jsx";
-import "../src/css/index.css";
-import Home from "./pages/Home.jsx";
-import Profil from "./pages/Profil.jsx";
-import Setting from "./pages/Setting.jsx";
-import Community from "./pages/Community.jsx";
-import Error from "./pages/Error.jsx";
+import Root from "../pages/Root.jsx";
+import "../css/index.css";
+import Home from "../pages/Home.jsx";
+import Profil from "../pages/Profil.jsx";
+import Setting from "../pages/Setting.jsx";
+import Community from "../pages/Community.jsx";
+import Error from "../pages/Error.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

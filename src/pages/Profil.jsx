@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import "../css/pages/Profil.css";
 import VerticalNavbar from "../components/VerticalNavbar.jsx";
@@ -7,8 +8,8 @@ import ComponentLineChart from "../components/LineChart";
 import ComponentRadarChart from "../components/RadarChart";
 import ComponentPieChart from "../components/PieChart";
 
-import FakeCallAPI from "../components/FakeCallAPI.jsx";
-import LocalUserDataModel from "../models/localUser.js";
+import FakeCallAPI from "../components/FakeCallAPI.jsx"; // Data Locale
+import LocalUserDataModel from "../models/localUser.js"; // Data Locale
 
 import UserDataModel from "../models/user.js"; // API
 import FetchData from "../components/FetchData"; // API

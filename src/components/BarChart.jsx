@@ -18,6 +18,8 @@ export default function ComponentBarChart({ data }) {
   };
 
   const CustomTooltip = ({ active, payload }) => {
+    // console.log(payload);
+    // console.log(active);
     if (active && payload && payload.length) {
       return (
         <div className="custom-tooltip custom-bar">

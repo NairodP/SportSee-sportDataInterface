@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // Hook Api
-import Fetch from "./Fetch";
+import useFetch from "./useFetch";
 import { useEffect, useState } from "react";
 
 const FetchData = (url, userId) => {
@@ -8,23 +8,18 @@ const FetchData = (url, userId) => {
   const [activity, setActivity] = useState([]);
   const [averageSessions, setAverageSessions] = useState([]);
   const [performance, setPerformance] = useState({});
-  const [performanceKind, setPerformanceKind] = useState();
 
-  const { isLoading: loadingUser, axiosRequest: fetchUser } = Fetch(
-    `${url}/user/${userId}/`
-  );
+  const fetchUser = useFetch(`${url}/user/${userId}/`).axiosRequest;
 
-  const { isLoading: loadingActivity, axiosRequest: fetchActivity } = Fetch(
-    `${url}/user/${userId}/activity`
-  );
+  const fetchActivity = useFetch(`${url}/user/${userId}/activity`).axiosRequest;
 
-  const {
-    isLoading: loadingAverageSessions,
-    axiosRequest: fetchAverageSessions,
-  } = Fetch(`${url}/user/${userId}/average-sessions`);
+  const fetchAverageSessions = useFetch(
+    `${url}/user/${userId}/average-sessions`
+  ).axiosRequest;
 
-  const { isLoading: loadingPerformance, axiosRequest: fetchPerformance } =
-    Fetch(`${url}/user/${userId}/performance`);
+  const fetchPerformance = useFetch(
+    `${url}/user/${userId}/performance`
+  ).axiosRequest;
 
   // useEfect function
   useEffect(() => {
@@ -39,7 +34,6 @@ const FetchData = (url, userId) => {
     async function fetchData() {
       const data = await fetchPerformance();
       setPerformance(data.data);
-      setPerformanceKind(data.kind);
     }
     fetchData();
   }, []);
@@ -61,15 +55,10 @@ const FetchData = (url, userId) => {
   }, []);
 
   return {
+    user,
+    performance,
     activity,
     averageSessions,
-    performance,
-    user,
-    performanceKind,
-    loadingUser,
-    loadingActivity,
-    loadingAverageSessions,
-    loadingPerformance,
   };
 };
 export default FetchData;

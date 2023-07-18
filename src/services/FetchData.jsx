@@ -57,11 +57,12 @@
 
 /* Début avec APPEL à l'API */
 import CallAPI from "../hooks/useFetch";
-import UserDataModel from "../models/data.js";
+import UserDataModel from "../models/data";
 import { useEffect, useState } from "react";
 
 export default function FetchData({ url, userId }) {
   const [apiData, setApiData] = useState(null);
+  const [isDataProcessed, setIsDataProcessed] = useState(false);
   const data = CallAPI({ url, userId });
 
   useEffect(() => {
@@ -70,27 +71,21 @@ export default function FetchData({ url, userId }) {
       data.user &&
       data.performance &&
       data.averageSessions.length !== 0 &&
-      data.activity.length !== 0
+      data.activity.length !== 0 &&
+      !isDataProcessed
     ) {
       const userDataModel = new UserDataModel(data);
-      const userMainData = userDataModel.getUserMainData();
-      const userActivity = userDataModel.getUserActivity();
-      const userAverageSessions = userDataModel.getUserAverageSessions();
-      const userPerformance = userDataModel.getUserPerformance();
-
-      // setApiData({
-      //   userMainData,
-      //   userActivity,
-      //   userAverageSessions,
-      //   userPerformance,
-      // });
+      const formattedData = {
+        userMainData: userDataModel.getUserMainData(),
+        userActivity: userDataModel.getUserActivity(),
+        userAverageSessions: userDataModel.getUserAverageSessions(),
+        userPerformance: userDataModel.getUserPerformance(),
+      };
+      setApiData(formattedData);
+      setIsDataProcessed(true);
     }
-  }, [data]);
+  }, [data, isDataProcessed]);
 
-  // console.log(apiData);
   return apiData;
 }
 /* Fin avec APPEL à l'API */
-
-
-// erreur : Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.

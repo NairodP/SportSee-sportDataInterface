@@ -85,7 +85,6 @@
   border-radius: 4px;
 }
 
-/* Styles spécifiques aux écrans d'une largeur maximale de 1400 pixels */
 @media (max-width: 1400px) {
   .align-container {
     flex-direction: column-reverse;
@@ -99,7 +98,6 @@
   }
 }
 
-/* Styles spécifiques aux écrans d'une largeur maximale de 1023 pixels */
 @media (max-width: 1023px) {
   .line-graph-container,
   .radar-graph-container,

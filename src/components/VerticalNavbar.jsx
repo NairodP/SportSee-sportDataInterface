@@ -1,5 +1,10 @@
 /* eslint-disable react/prop-types */
 import "/src/css/components/verticalNavbar.css";
+import burgerIcon from "../assets/img/hamburger.svg";
+import yogaIcon from "../assets/img/yoga-icon.png";
+import natationIcon from "../assets/img/natation-icon.png";
+import veloIcon from "../assets/img/velo-icon.png";
+import muscuIcon from "../assets/img/muscu-icon.png";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
@@ -33,7 +38,7 @@ export default function VerticalNavbar({ isDataLoaded }) {
     <>
       {isDataLoaded && windowWidth < 1024 && (
         <button className="displayNav" onClick={toggleNav}>
-          <img src="/src/assets/img/hamburger.svg" alt="Menu" />
+          <img src={burgerIcon} alt="Menu" />
         </button>
       )}
 
@@ -42,22 +47,22 @@ export default function VerticalNavbar({ isDataLoaded }) {
           <ul>
             <li>
               <Link to="/profil">
-                <img src="/src/assets/img/yoga-icon.png" alt="Yoga Logo" />
+                <img src={yogaIcon} alt="Yoga Logo" />
               </Link>
             </li>
             <li>
               <Link to="/profil">
-                <img src="/src/assets/img/natation-icon.png" alt="Natation Logo" />
+                <img src={natationIcon} alt="Natation Logo" />
               </Link>
             </li>
             <li>
               <Link to="/profil">
-                <img src="/src/assets/img/velo-icon.png" alt="Vélo Logo" />
+                <img src={veloIcon} alt="Vélo Logo" />
               </Link>
             </li>
             <li>
               <Link to="/profil">
-                <img src="/src/assets/img/muscu-icon.png" alt="Musculation Logo" />
+                <img src={muscuIcon} alt="Musculation Logo" />
               </Link>
             </li>
           </ul>

@@ -8,6 +8,12 @@ import ComponentRadarChart from "../components/RadarChart";
 import ComponentPieChart from "../components/PieChart";
 import FetchData from "../services/FetchData"; // API
 
+import loader from "../assets/img/loader.svg";
+import fatIcon from "../assets/img/fat-icon.png";
+import proteinIcon from "../assets/img/protein-icon.png";
+import caloriesIcon from "../assets/img/calories-icon.png";
+import carbsIcon from "../assets/img/carbs-icon.png";
+
 export default function Profil() {
   const url = import.meta.env.VITE_API_URL;
   const userId = parseInt(import.meta.env.VITE_USER_ID);
@@ -48,7 +54,7 @@ export default function Profil() {
 
       {!isDataLoaded ? (
         <div className="loader-container">
-          <img src="/src/assets/img/loader.svg" alt="loader" />
+          <img src={loader} alt="loader" />
         </div>
       ) : (
         <>
@@ -87,7 +93,7 @@ export default function Profil() {
                     <DataBox
                       dataKey={keyData.calorieCount}
                       label="Calories"
-                      image="/src/assets/img/calories-icon.png"
+                      image={caloriesIcon}
                       value={keyData.calorieCount}
                       unit="kCal"
                     />
@@ -95,7 +101,7 @@ export default function Profil() {
                     <DataBox
                       dataKey={keyData.proteinCount}
                       label="Proteines"
-                      image="/src/assets/img/protein-icon.png"
+                      image={proteinIcon}
                       value={keyData.proteinCount}
                       unit="g"
                     />
@@ -103,7 +109,7 @@ export default function Profil() {
                     <DataBox
                       dataKey={keyData.carbohydrateCount}
                       label="Glucides"
-                      image="/src/assets/img/carbs-icon.png"
+                      image={carbsIcon}
                       value={keyData.carbohydrateCount}
                       unit="g"
                     />
@@ -111,7 +117,7 @@ export default function Profil() {
                     <DataBox
                       dataKey={keyData.lipidCount}
                       label="Lipides"
-                      image="/src/assets/img/fat-icon.png"
+                      image={fatIcon}
                       value={keyData.lipidCount}
                       unit="g"
                     />
